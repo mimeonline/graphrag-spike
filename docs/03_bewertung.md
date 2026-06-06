@@ -18,7 +18,8 @@ Der Spike beantwortet eine einfache Frage:
 - Die Nachbarschaften erklären nichts Zusätzliches gegenüber normalem RAG.
 - Die Visualisierung ist schwer lesbar oder wirkt beliebig.
 - Die Ontologie-Relationen wirken frei erfunden oder passen nicht zum Dokument.
-- Die Antwort nennt Behauptungen, die in `answer_context.md` nicht belegbar sind.
+- Die GraphRAG-Antwort nennt Behauptungen, die in `answer_graphrag_context.md` nicht belegbar sind.
+- `answer_comparison.md` verkauft GraphRAG als automatisch überlegen, obwohl RAG-only und GraphRAG bei der konkreten Frage kaum auseinanderliegen.
 
 ## Entscheidung
 

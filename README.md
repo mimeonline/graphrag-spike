@@ -1,4 +1,4 @@
-# Graf-Kompass GraphRAG Provenienz-Spike
+# graphrag-spike
 
 Kleiner Playground-Spike für einen kompletten GraphRAG-Durchstich. Das Projekt ist als Lernstrecke gedacht: Du sollst beim Durcharbeiten praktisch sehen, wie Dokumentgraph, Ontologiegraph, Vector Retrieval und LLM-Antwort zusammenspielen.
 
@@ -9,7 +9,7 @@ Kleiner Playground-Spike für einen kompletten GraphRAG-Durchstich. Das Projekt 
 5. Dokumentgraph und Ontologiegraph nach Neo4j Aura schreiben.
 6. Vector Search mit 1-Hop-Graph-Kontext ausführen.
 7. Provenienzpfad als JSON und statische SVG-HTML exportieren.
-8. LLM-Antwort mit Quellenbelegen erzeugen.
+8. Antworten als LLM-only, RAG-only und GraphRAG erzeugen und vergleichen.
 
 Das Ziel ist nicht perfektes GraphRAG, sondern praktisches Verständnis: Welche Architektur-Schichten braucht ein quellenbasiertes GraphRAG-Pattern, und hilft ein sichtbarer Belegpfad für den Graf-Kompass?
 
@@ -21,7 +21,7 @@ Hinweis: Dieses Projekt zeigt GraphRAG mit Neo4j/Cypher und OpenAI Embeddings. E
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python -m ipykernel install --user --name graf-kompass-graphrag-spike
+python -m ipykernel install --user --name graphrag-spike
 cp .env.example .env
 ```
 
@@ -37,8 +37,12 @@ Erwartete Outputs:
 - `outputs/<szenario>/provenance.json`
 - `outputs/<szenario>/provenance.html`
 - `outputs/<szenario>/retrieval_brief.md`
-- `outputs/<szenario>/answer_context.md`
-- `outputs/<szenario>/answer.md`
+- `outputs/<szenario>/answer_rag_context.md`
+- `outputs/<szenario>/answer_graphrag_context.md`
+- `outputs/<szenario>/answer_llm_only.md`
+- `outputs/<szenario>/answer_rag_only.md`
+- `outputs/<szenario>/answer_graphrag.md`
+- `outputs/<szenario>/answer_comparison.md`
 
 Die Szenario-Notebooks leeren vor den OpenAI-Embeddings die aktuell konfigurierte Neo4j-Testdatenbank und bauen ihr jeweiliges Szenario neu auf. Das ist für isolierte Demo-Läufe bewusst so gewählt.
 
@@ -49,7 +53,7 @@ Nach dem ersten Lauf ist der Spike nützlich, wenn:
 - die Top-Treffer fachlich plausibel sind,
 - der Graph eine verständliche Belegspur aus Dokumentgraph und Ontologiegraph zeigt,
 - `provenance.html` als Demo-Screenshot oder interaktive Grafik funktioniert,
-- `answer.md` eine quellenbasierte LLM-Synthese liefert,
+- `answer_comparison.md` sichtbar macht, was LLM-only, RAG-only und GraphRAG jeweils leisten,
 - klar wird, welche bessere Entitäts- oder Begriffsextraktion als nächster Schritt nötig ist.
 
 Wenn einfache Term-Knoten noch Rauschen erzeugen, ist das kein Scheitern. Dann zeigt der Spike, warum der kuratierte Ontologiegraph mit `Entity`-/`Concept`-Knoten für den Graf-Kompass wertvoll ist.
@@ -71,7 +75,7 @@ Die Lernschichten in jedem Notebook sind:
 1. Dokumentgraph: `Document -> Chunk`
 2. Ontologiegraph: `Ontology -> OntologyClass -> Entity/Concept -> ONTOLOGY_RELATION`
 3. Retrievalgraph: `Question -> Vector Search -> Chunk -> Entity -> Nachbarkontext`
-4. Antwortsynthese: `Belege -> LLM -> answer.md`
+4. Antwortvergleich: `Frage -> LLM-only`, `Chunks -> RAG-only`, `Chunks + Entitäten + Pfade -> GraphRAG`
 
 Das generische All-Sources-Notebook liegt nur noch als Vorlage unter `templates/01_graphrag_quickstart_template.ipynb`.
 

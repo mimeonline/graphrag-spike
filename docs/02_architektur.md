@@ -16,8 +16,11 @@ Retrievalgraph:
 (Chunk)-[:HAS_CONCEPT]->(Entity)
 (Chunk)-[:MENTIONS]->(Term)
 
-Antwortsynthese:
-Top-Chunks + Ontologie-Kontext + Textbelege -> LLM -> answer.md
+Antwortvergleich:
+Frage -> LLM-only
+Top-Chunks -> RAG-only
+Top-Chunks + Entitäten + Graphpfade + Graph-Belege -> GraphRAG
+LLM-only + RAG-only + GraphRAG -> answer_comparison.md
 ```
 
 `Chunk.embedding` wird mit einem Neo4j Vector Index durchsuchbar gemacht. Die Ontologie ist kein Ersatz für Retrieval, sondern ein Kontextmodell: Sie hilft, gefundene Textstellen fachlich einzuordnen und Nachbarschaften sichtbar zu machen.
@@ -30,7 +33,8 @@ Top-Chunks + Ontologie-Kontext + Textbelege -> LLM -> answer.md
 - `Entity`/`Concept` sind die fachlichen Knoten der Kontextkarte.
 - `ONTOLOGY_RELATION` beschreibt bewusst kuratierte Beziehungen zwischen Entitäten.
 - `Term` bleibt als einfacher, automatisch extrahierter Vergleichskanal erhalten. Er zeigt, warum reine Wort-Nachbarschaft oft weniger sauber ist als ein kuratierter Ontologiegraph.
-- Das LLM formuliert am Ende eine Antwort nur aus den gefundenen Belegen.
+- Das LLM formuliert am Ende drei Vergleichsantworten: ohne lokalen Kontext, nur mit direkten Textbelegen und mit vollständigem GraphRAG-Kontext.
+- Der Vergleich zeigt, ob der Graph gegenüber klassischem RAG wirklich zusätzliche Struktur sichtbar macht oder bei einer einfachen Frage nur wenig Mehrwert liefert.
 
 ## Mentales Modell
 
@@ -48,7 +52,7 @@ Beleg bedeutet: Welcher Chunk aus welcher Quelle stützt die Antwort?
 - Die Term-Extraktion ist nur ein Regex-/Frequenz-Platzhalter.
 - Die Ontologien sind kuratierte Lern-Kontextkarten, keine vollständigen Fachontologien.
 - `HAS_CONCEPT` wird über Alias-Matching erzeugt; produktiv bräuchte es robustere Entity Linking-Logik.
-- Die LLM-Antwort nutzt Belege, hat aber noch keine harte automatische Zitierprüfung.
+- Die LLM-Antworten nutzen je nach Methode unterschiedliche Kontextstufen, haben aber noch keine harte automatische Zitierprüfung.
 - Die statische SVG-Grafik ist Demo-orientiert, nicht final kuratiert.
 
 ## Nächster Schritt
