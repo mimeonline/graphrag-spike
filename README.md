@@ -60,7 +60,7 @@ Neo4j Aura nennt eine Cloud-Datenbank im UI meist `Instance`. Für diesen Spike 
 7. Aktiviere optional `Vector optimization`, falls die Option angeboten wird. Der Spike legt den Neo4j-Vector-Index selbst im Notebook an.
 8. Erstelle die Instanz und lade die Credentials-Datei direkt herunter. Das Passwort wird später nicht erneut angezeigt.
 9. Lege die heruntergeladene Datei optional direkt in dieses Projektverzeichnis. Sie heißt oft ähnlich wie `Neo4j-...-Created-....txt` und enthält unter anderem Connection URI, User, Passwort, Datenbankname, Instance ID und Instance Name.
-10. Die Notebooks lesen diese Datei beim Start automatisch und übernehmen fehlende Werte in die Laufzeitumgebung. Das ist praktisch für lokale Experimente, weil du die Aura-Parameter nicht einzeln abtippen musst.
+10. Die Notebooks lesen diese Datei beim Start automatisch und übernehmen fehlende oder leer gelassene Aura-Werte in die Laufzeitumgebung. Das ist praktisch für lokale Experimente, weil du die Aura-Parameter nicht einzeln abtippen musst.
 11. Alternativ oder zusätzlich kannst du die Werte manuell in `.env` eintragen:
 
 ```bash
@@ -70,7 +70,7 @@ NEO4J_PASSWORD=<passwort-aus-der-credentials-datei>
 NEO4J_DATABASE=neo4j
 ```
 
-Werte aus `.env` haben Vorrang vor der Credentials-Datei. So kannst du z. B. eine heruntergeladene Aura-Datei im Ordner lassen, aber einzelne Parameter lokal überschreiben. Committe weder `.env` noch die Aura-Credentials-Datei.
+Nicht-leere Werte aus `.env` haben Vorrang vor der Credentials-Datei. So kannst du z. B. eine heruntergeladene Aura-Datei im Ordner lassen, aber einzelne Parameter lokal überschreiben. Committe weder `.env` noch die Aura-Credentials-Datei.
 
 Zum kurzen Verbindungstest kannst du in Aura `Query` öffnen, die Instanz verbinden und ausführen:
 

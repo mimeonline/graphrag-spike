@@ -66,4 +66,4 @@ Der letzte fachliche Schritt erzeugt eine LLM-Antwort. Dafür nutzt das Notebook
 
 ## Neo4j Aura Credentials
 
-Wenn eine Neo4j-Aura-Credentials-Datei im Projektordner liegt, z. B. `Neo4j-...-Created-....txt`, liest das Notebook sie automatisch. Unterstützt werden unter anderem `NEO4J_URI`, `NEO4J_USERNAME`, `NEO4J_PASSWORD` und `NEO4J_DATABASE`. Werte aus `.env` haben Vorrang; die Credentials-Datei füllt nur fehlende Werte auf.
+Wenn eine Neo4j-Aura-Credentials-Datei im Projektordner liegt, z. B. `Neo4j-...-Created-....txt`, liest das Notebook sie automatisch. Unterstützt werden unter anderem `NEO4J_URI`, `NEO4J_USERNAME`, `NEO4J_PASSWORD` und `NEO4J_DATABASE`. Nicht-leere Werte aus `.env` haben Vorrang; die Credentials-Datei füllt fehlende oder leer gelassene Werte auf.
