@@ -2,7 +2,7 @@
 
 Kleiner Playground-Spike für einen kompletten GraphRAG-Durchstich. Das Projekt ist als Lernstrecke gedacht: Du sollst beim Durcharbeiten praktisch sehen, wie Dokumentgraph, Ontologiegraph, Vector Retrieval und LLM-Antwort zusammenspielen.
 
-1. 1-3 Quellen in `data/` ablegen (`.pdf`, `.md`, `.txt` oder `.xml`).
+1. Die mitgelieferten Demoquellen aus `data/` laden (`.pdf` und `.xml`).
 2. Chunks erzeugen.
 3. Embeddings berechnen, wahlweise direkt über OpenAI oder über GitHub Models.
 4. Szenario-Ontologie als Kontextkarte prüfen.
@@ -29,7 +29,7 @@ Danach:
 
 - Trage `OPENAI_API_KEY`, `NEO4J_URI` und `NEO4J_PASSWORD` in `.env` ein.
 - Für GitHub Models setze stattdessen `LLM_PROVIDER=github` und `GITHUB_MODELS_API_KEY` mit einem PAT, der `models: read` darf.
-- Lege mindestens eine `.pdf`, `.md`, `.txt` oder `.xml` in `data/`.
+- Die drei Demoquellen liegen bereits in `data/`. Eigene `.pdf`-, `.md`-, `.txt`- oder `.xml`-Dateien kannst du optional ergänzen.
 - Öffne für den ersten Lauf `notebooks/01_klima_kommunale_klimaanpassung.ipynb`.
 - Führe das Notebook von oben nach unten aus.
 

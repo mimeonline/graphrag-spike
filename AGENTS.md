@@ -81,7 +81,7 @@ Analog für `bsi_it_grundschutz` und `sozialbericht_2024`.
 
 - `.env` darf nicht committet werden.
 - Neo4j-Aura-Credentials-Dateien dürfen nicht committet werden.
-- Die großen Dateien unter `data/` sind aktuell ignoriert.
+- Die Demoquellen unter `data/` sind absichtlich versioniert, damit das Projekt direkt nachspielbar ist.
 - Keine Secrets in Notebook-Ausgaben, Markdown-Dateien oder Commit-Messages schreiben.
 
 ## Lokale Umgebung

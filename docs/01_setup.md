@@ -5,7 +5,7 @@
 - Python 3.11 oder neuer
 - Neo4j Aura Instanz mit Bolt/Neo4j URI
 - OpenAI API-Key oder GitHub Personal Access Token mit `models: read`
-- 1-3 kleine Testquellen als `.pdf`, `.md`, `.txt` oder `.xml`
+- die mitgelieferten Demoquellen in `data/`; eigene `.pdf`-, `.md`-, `.txt`- oder `.xml`-Dateien sind optional
 
 ## Secrets
 
