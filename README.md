@@ -122,3 +122,15 @@ Im `data/`-Ordner liegen als geeignete deutsche Experimentierquellen:
 - Sozialbericht 2024
 
 Diese drei Quellen sind bewusst anschlussfähiger als ein einzelnes Fachbuch: Security, Klimaresilienz und gesellschaftliche Daten funktionieren jeweils als eigenständige Demo-Szenarien.
+
+## Quellen und Rechtehinweis
+
+Die Demo-Dateien in `data/` sind öffentlich zugängliche Publikationen externer Herausgeber. Sie werden hier als kleine, nachvollziehbare Lern- und Demoquellen für den GraphRAG-Spike mitgeführt.
+
+| Datei | Inhalt | Herausgeber | Originalquelle |
+| --- | --- | --- | --- |
+| `data/48_2024_cc_kommunale_klimaanpassung.pdf` | `Kommunale Klimaanpassung. Bestandsaufnahme, Einflussfaktoren und Hebelpunkte`, Reihe `Climate Change 48/2024` | Umweltbundesamt | <https://www.umweltbundesamt.de/publikationen/kommunale-klimaanpassung> |
+| `data/IT_Grundschutz_Kompendium_2023.xml` | `IT-Grundschutz-Kompendium`, Edition 2023, XML-Fassung | Bundesamt für Sicherheit in der Informationstechnik (BSI) | <https://www.bsi.bund.de/grundschutz> |
+| `data/Sozialbericht_2024_bf_k2.pdf` | `Sozialbericht 2024. Ein Datenreport für Deutschland` | Bundeszentrale für politische Bildung (bpb), Destatis, WZB, BiB, SOEP/DIW Berlin | <https://www.bpb.de/kurz-knapp/zahlen-und-fakten/sozialbericht-2024/> |
+
+Die Rechte an den Publikationen verbleiben bei den jeweiligen Herausgebern. Für eine Weiterverwendung, Veröffentlichung oder Bearbeitung außerhalb dieser Demo sollten die jeweils aktuellen Nutzungsbedingungen der Originalquellen geprüft werden. Die Dateien werden im Projekt nicht als eigene Inhalte ausgegeben, sondern als belegbare Testquellen für Retrieval, Graphaufbau und Provenienzvisualisierung genutzt.
