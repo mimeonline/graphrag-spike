@@ -6,9 +6,6 @@ __pycache__/
 .DS_Store
 outputs/*
 !outputs/.gitkeep
-data/*
-!data/.gitkeep
-
 Neo4j-3f153076-Created-2026-06-06
 Neo4j-*-Created-*.txt
 Neo4j-*-Created-*
