@@ -134,3 +134,11 @@ Die Demo-Dateien in `data/` sind öffentlich zugängliche Publikationen externer
 | `data/Sozialbericht_2024_bf_k2.pdf` | `Sozialbericht 2024. Ein Datenreport für Deutschland` | Bundeszentrale für politische Bildung (bpb), Destatis, WZB, BiB, SOEP/DIW Berlin | <https://www.bpb.de/kurz-knapp/zahlen-und-fakten/sozialbericht-2024/> |
 
 Die Rechte an den Publikationen verbleiben bei den jeweiligen Herausgebern. Für eine Weiterverwendung, Veröffentlichung oder Bearbeitung außerhalb dieser Demo sollten die jeweils aktuellen Nutzungsbedingungen der Originalquellen geprüft werden. Die Dateien werden im Projekt nicht als eigene Inhalte ausgegeben, sondern als belegbare Testquellen für Retrieval, Graphaufbau und Provenienzvisualisierung genutzt.
+
+## Autor und Lizenz
+
+Dieser Spike wurde von Michael Meierhoff als frei nutzbares Lern- und Demo-Projekt erstellt.
+
+Der Projektcode, die Notebooks, Ontologie-Beispiele und Dokumentation stehen unter der MIT-Lizenz, siehe [LICENSE](LICENSE). Du kannst diese Teile frei verwenden, kopieren, verändern und weitergeben.
+
+Die externen Demoquellen unter `data/` sind davon ausgenommen. Für diese Dateien gelten die Rechte und Nutzungsbedingungen der jeweiligen Herausgeber, siehe Abschnitt `Quellen und Rechtehinweis`.
